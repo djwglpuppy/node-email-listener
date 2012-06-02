@@ -4,7 +4,7 @@ _ = require("underscore")
 
 exports.listener = newmsg = new Event()
 
-exports.startMail = (port = 25) ->
+exports.start = (port = 25) ->
     server = net.createServer (stream) ->
         stream.setEncoding "utf8"
         stream.out = (msg) -> stream.write(msg + '\r\n')
