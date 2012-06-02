@@ -15,7 +15,6 @@ var emaillisten = require("email-listener");
 
 //The optional argument will be the port to listen on
 //(defaults to 25)
-
 emaillisten.start();
 
 //Listener Event
@@ -31,4 +30,4 @@ emaillisten.on("msg", function(recipient, body){
 ```
 
 ##notes
-Right now it just emits the raw body of the email message.  I eventually want to send the body parsed on sepearated appropriately
+Right now it just emits the raw body of the email message.  I eventually want to appropriately parse and return the body for easier manipulation.
