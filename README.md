@@ -19,10 +19,10 @@ var emaillisten = require("email-listener");
 emaillisten.start();
 
 //Listener Event
-emaillisten.on("msg", function(sender, body){
+emaillisten.on("msg", function(recipient, body){
 
-    //Whom sent the Message
-    console.log(sender);
+    //Whom the message is for
+    console.log(recipient);
     
     //The raw contents of the message body
     console.log(body);
