@@ -18,9 +18,7 @@ var emaillisten = require("email-listener");
 
 emaillisten.start();
 
-
 //Listener Event
-
 emaillisten.listen.on("msg", function(sender, body){
 
     //Whom sent the Message
