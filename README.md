@@ -1,5 +1,5 @@
 #node.js email listener
-This will allow you to create a simple email recieving server, to get messages sent to trigger an event.  You can then parse through the message of the body how you want.
+This will allow you to create a simple email receiving server that will listen for new messages and then trigger an event. You can then parse through the message of the body any way you want.
 
 ##installation
 
@@ -13,14 +13,22 @@ npm install email-listener
 ```javascript
 var emaillisten = require("email-listener");
 
-//The optional argument will be the port to listen on (defaults to 25)
+//The optional argument will be the port to listen on
+//(defaults to 25)
+
 emaillisten.start();
 
+
+//Listener Event
+
 emaillisten.listen.on("msg", function(sender, body){
+
     //Whom sent the Message
     console.log(sender);
+    
     //The raw contents of the message body
     console.log(body);
+    
 });
 ```
 
