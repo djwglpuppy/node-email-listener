@@ -1,0 +1,29 @@
+{
+  "name": "email-listener",
+  "version": "0.0.1beta",
+  "author": "David K Roberts <davidroberts@gmail.com> (http://www.nodejs.io/)",
+  "description": "Listen for email messages on a server and then trigger an even",
+  "bugs": {
+    "url": "https://github.com/djwglpuppy/node-email-listener/issues"
+  },
+  "homepage": "https://github.com/djwglpuppy/node-email-listener",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/djwglpuppy/node-email-listener.git"
+  },
+  "main": "./index",
+  "dependencies": {
+    "underscore": ">=0.0.1"
+  },
+  "devDependencies": {
+    "should": ">0.0.1",
+    "mocha": ">0.0.1"
+  },
+  "keywords": [
+    "smtp",
+    "email"
+  ],
+  "engines": {
+    "node": "*"
+  }
+}
