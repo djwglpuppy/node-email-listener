@@ -1,6 +1,6 @@
 {
   "name": "email-listener",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "David K Roberts <davidroberts@gmail.com> (http://www.nodejs.io/)",
   "description": "Listen for email messages on a server and then trigger an event",
   "bugs": {

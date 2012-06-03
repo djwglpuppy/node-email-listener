@@ -103,9 +103,9 @@ class ServerListener extends Event
                 content = '\n' + self.trim(line)
 
                 if isContent
-                    if boundary isnt "" and line is "--#{boundary}"
+                    if boundary isnt "" and self.trim(line) is "--#{boundary}"
                         boundaryTriggered = true
-                    else if line isnt "--#{boundary}--" and bodyType isnt ""
+                    else if self.trim(line) isnt "--#{boundary}--" and bodyType isnt ""
                         emailData.body[bodyType] += content
                     else
                         bodyType = ""
@@ -154,7 +154,6 @@ class ServerListener extends Event
                             infotype = content.split(";")
 
                             buildFor = ->
-                                console.log infotype[0]
                                 switch infotype[0]
                                     when "text/html"
                                         bodyType = "html"
@@ -186,8 +185,6 @@ class ServerListener extends Event
                 dataAppend()
 
         return emailData
-
-
 
 
 module.exports = new ServerListener()
