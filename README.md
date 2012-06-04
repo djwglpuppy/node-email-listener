@@ -1,6 +1,10 @@
 #node.js email listener
 This will allow you to create a simple email receiving server that will listen for new messages and then trigger an event. You can then parse through the message of the body any way you want.
 
+[http://email-listener.nodejs.io/] (http://email-listener.nodejs.io/)
+
+Use the link above to test the app... and help me by adding more emails to test and get this working just right
+
 ##installation
 
 ```
