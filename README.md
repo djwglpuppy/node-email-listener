@@ -3,7 +3,7 @@ This will allow you to create a simple email receiving server that will listen f
 
 [http://email-listener.nodejs.io/] (http://email-listener.nodejs.io/)
 
-Use the link above to test the app... and help me by adding more emails to test and get this working just right
+Use the link above to test the app.
 
 ##installation
 
@@ -22,27 +22,27 @@ var emaillisten = require("email-listener");
 emaillisten.start();
 
 //Listener Event
-emaillisten.on("msg", function(recipient, body){
+emaillisten.on("msg", function(recipient, rawbody, parsed){
 
     //Whom the message is for
     console.log(recipient);
     
     //The raw contents of the message body
-    console.log(body);
+    console.log(rawbody);
     
-    //Here you can use the parseBody function to organize data better
-    //This is still a work in progress.. so use at your own risk
-    console.log(this.parseBody(body))
+    //This is the parsed message as an object with useful and easy ways to work with the message
+    console.log(parsed);
     
     
 });
 ```
 
-##guide
+##parsed message
 
-###parseBody(body) method
+[https://github.com/andris9/mailparser] (https://github.com/andris9/mailparser)
 
-This will take the raw body of the email and try to turn it into easier data to work with.  This has been tested against a handful of emails, but needs to continue to get it working the best it can.  currently, there is no support for attachments, but that will be coming shortly.
+This library is used to parse the message, please refer to it about what is returned in the `parsed` return in the callback.  There will be more options to control this in future releases.  For now, it just returns the parsed message with the default options.
 
-##notes
-Right now it just emits the raw body of the email message.  I eventually want to appropriately parse and return the body for easier manipulation.
+
+
+
