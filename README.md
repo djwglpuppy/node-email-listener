@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/djwglpuppy/node-email-listener.png)](http://travis-ci.org/djwglpuppy/node-email-listener)
 #node.js email listener
 This will allow you to create a simple email receiving server that will listen for new messages and then trigger an event. You can then parse through the message of the body any way you want.
 
