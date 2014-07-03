@@ -7,6 +7,8 @@ class ServerListener extends Event
 
     start: (port = 25) ->
         self = @
+        
+        clientRemoteAddress = null
 
         server = net.createServer (stream) ->
             stream.setEncoding "utf8"
@@ -33,6 +35,7 @@ class ServerListener extends Event
                     if not stream.isBody
                         mailparser = new MailParser
                         mailparser.on "end", (mail_object) ->
+                            mail_object.clientRemoteAddress = clientRemoteAddress
                             self.emit("msg", stream.recipient, stream.body, mail_object)
 
                         mailparser.write(stream.body)
@@ -53,6 +56,8 @@ class ServerListener extends Event
                     else
                         stdresponse()
 
+        server.on "connection", (sock) ->
+            clientRemoteAddress = sock.remoteAddress;
 
         server.listen(port)
         console.log "mail listener has started on port #{port}"
